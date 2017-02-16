@@ -1,1 +1,5 @@
 # Azure Managed Disks Examples
+* [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/get-started-with-az-cli2) (Python-based preview) examples of interactions with Managed Disks - [managed-disks-az-cli2.sh](managed-disks-az-cli2.sh)
+* [Azure CLI 0.10.9+](https://docs.microsoft.com/en-us/azure/xplat-cli-install) (nodejs-based cross-platform CLI) examples of interaction with Managed Disks - [managed-disks-azure-cli.sh](managed-disks-azure-cli.sh)
+* [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azureps-cmdlets-docs/) examples of interaction with Managed Disks - [managed-disks-powershell.ps1](managed-disks-powershell.ps1)
+* [Azure Python SDK](https://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.compute.models.html#azure.mgmt.compute.models.ManagedDiskParameters) - [https://github.com/Azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python)
