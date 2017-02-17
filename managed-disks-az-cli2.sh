@@ -87,3 +87,6 @@ az vm delete --resource-group "avtest2" --name "avtest-vm-copy"
 az network public-ip create --resource-group "avtest2" --location "eastus" --name "avtest-publicip2" -o json
 az network nic create --resource-group "avtest2" --location "eastus" --name "avtest-nic2" --subnet "/subscriptions/subscription-id/resourceGroups/avtest2/providers/Microsoft.Network/virtualNetworks/avtest-vnet/subnets/default" --public-ip-address "/subscriptions/subscription-id/resourceGroups/avtest2/providers/Microsoft.Network/publicIPAddresses/avtest-publicip2" -o json
 az vm create --resource-group "avtest2" --location "eastus" --name "avtest-vm2" --size "Standard_DS2_v2" --os-type "linux" --image "/subscriptions/subscription-id/resourceGroups/avtest2/providers/Microsoft.Compute/images/avtest-image" --size "Standard_DS2_v2" --admin-username "azureuser" --admin-password "P@ssw0rd$123" --authentication-type "password" --nics "/subscriptions/subscription-id/resourceGroups/avtest2/providers/Microsoft.Network/networkInterfaces/avtest-nic2" -o json
+
+# Create managed image from blob (blob name must not include /) stored in a storage account within the same region and same subscription
+az image create --resource-group "avtest2" --name "avtestimage" --os-type "linux" --source "https://storageaccount.blob.core.windows.net/images/myvhd1.vhd"

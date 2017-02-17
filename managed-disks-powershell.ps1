@@ -71,3 +71,9 @@ $vmConfigCopy = Set-AzureRmVMOSDisk -VM $vmConfigCopy -ManagedDiskId "/subscript
 # Actually create the copy VM by calling Azure Resource Management API and passing the VM configuration defined above
 $vmCopy = New-AzureRmVM -ResourceGroupName $rgName -Location $location -VM $vmConfigCopy
 $vmCopy
+
+# Create managed image from blob (blob name must not include /) stored in a storage account within the same region and same subscription
+$imageConfig = New-AzureRmImageConfig -Location "westus"
+$imageConfig = Set-AzureRmImageOsDisk -Image $imageConfig -OsType Linux -OsState Generalized -BlobUri "https://storageaccount.blob.core.windows.net/images/myvhd1.vhd"
+New-AzureRmImage -ResourceGroupName "avtest" -ImageName "avtestimage" -Image $imageConfig
+
