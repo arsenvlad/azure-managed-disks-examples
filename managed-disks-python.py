@@ -172,7 +172,8 @@ async_op = compute.virtual_machines.create_or_update(rg_name, "avtest-vm",
     })
 async_op.wait()
 
-# Detach managed data disk from VM 
+# Detach managed data disk from VM
+vm = compute.virtual_machines.get(rg_name, "avtest-vm")
 data_disks = vm.storage_profile.data_disks
 print('\nCurrent data disks attached to the VM:')
 for disk in data_disks:
